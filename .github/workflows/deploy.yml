@@ -52,6 +52,9 @@ jobs:
 
   deploy:
     needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
