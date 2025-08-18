@@ -44,8 +44,4 @@ jobs:
       - name: Build Vite app
         # Pass the base path so that assets resolve correctly when served from a subpath.
         run: npm run build -- --base=/expense-app/
-      - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./dist
 
