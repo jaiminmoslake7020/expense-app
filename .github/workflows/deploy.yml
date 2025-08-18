@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: './dist'
-          name: dist
+          name: github-pages
 
   deploy:
     needs: build
@@ -57,14 +57,14 @@ jobs:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     environment:
-      name: dist
+      name: github-pages
       url: ${{ steps.deploy-pages.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: github-pages
       - name: List  files
         run: pwd && ls -la
       - name: Deploy to GitHub Pages
