@@ -45,7 +45,7 @@ jobs:
         # Pass the base path so that assets resolve correctly when served from a subpath.
         run: npm run build -- --base=/expense-app/
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           path: './dist'
 
